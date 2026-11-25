@@ -1,375 +1,309 @@
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Orizzonti Travel | Viaggi Esclusivi &amp; Tour Guidati</title>
-  <meta name="description" content="Orizzonti Travel - Ditta Individuale con sede ad Aprilia (LT), Italia. Tour guidati in Egitto, Marocco, Turchia e Maldive con assistenza in italiano." />
-  <meta name="theme-color" content="#0F1E2E" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Orizzonti Travel" />
-  <link rel="manifest" href="data:application/manifest+json;utf8,%7B%22name%22%3A%22Orizzonti%20Travel%22%2C%22short_name%22%3A%22Orizzonti%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23FAF8F5%22%2C%22theme_color%22%3A%22%230F1E2E%22%7D" />
-
-  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ivory: '#FAF8F5',
-            champagne: '#F3EFEA',
-            navy: '#0F1E2E',
-            navylight: '#1A2F45',
-            gold: '#B89352',
-            golddark: '#9A783C',
-            charcoal: '#24292F',
-            slatewarm: '#5C6470',
-          },
-          fontFamily: {
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          boxShadow: {
-            luxury: '0 20px 50px -15px rgba(15, 30, 46, 0.08)',
-            card: '0 10px 30px -10px rgba(15, 30, 46, 0.06)',
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orizzonti Travel — Pacchetti Egitto</title>
   <style>
+    :root {
+      --bg: #f8f6f0;
+      --surface: #ffffff;
+      --ink: #102a43;
+      --muted: #52606d;
+      --primary: #102a43;
+      --gold: #c59b27;
+      --border: #d9e2ec;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #FAF8F5;
-      color: #24292F;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      -webkit-font-smoothing: antialiased;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
     }
-    h1, h2, h3, .font-editorial {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+    header {
+      background: var(--surface);
+      border-bottom: 2px solid var(--gold);
+      padding: 18px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
-    .glass-nav {
-      background: rgba(250, 248, 245, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(184, 147, 82, 0.18);
+    .brand {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
     }
-    .hero-overlay {
-      background: linear-gradient(180deg, rgba(15, 30, 46, 0.62) 0%, rgba(15, 30, 46, 0.45) 55%, rgba(15, 30, 46, 0.85) 100%);
+    .contacts {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 4px;
     }
-    .gold-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184, 147, 82, 0.5), transparent);
+    .hero {
+      max-width: 920px;
+      margin: 32px auto 20px;
+      padding: 0 20px;
+      text-align: center;
     }
-    ::-webkit-scrollbar {
-      width: 8px;
+    .hero h1 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 8px;
     }
-    ::-webkit-scrollbar-track {
-      background: #FAF8F5;
+    .hero p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto;
     }
-    ::-webkit-scrollbar-thumb {
-      background: #D6C7B2;
-      border-radius: 4px;
+    .tours-container {
+      max-width: 960px;
+      margin: 24px auto 60px;
+      padding: 0 20px;
+      display: grid;
+      gap: 28px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #B89352;
+    .tour-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 3px 10px rgba(16, 42, 67, 0.05);
+    }
+    .tour-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .tour-header h2 {
+      font-size: 1.45rem;
+      color: var(--primary);
+    }
+    .price-box {
+      background: #fdf8e7;
+      border: 1px solid var(--gold);
+      color: var(--primary);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .itinerary {
+      list-style: none;
+      margin: 12px 0 20px;
+    }
+    .itinerary li {
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 8px;
+      font-size: 0.96rem;
+    }
+    .itinerary li::before {
+      content: "•";
+      color: var(--gold);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    .btn-book {
+      background: var(--gold);
+      color: #102a43;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-book:hover {
+      opacity: 0.92;
+    }
+
+    /* Checkout Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal {
+      background: var(--surface);
+      padding: 28px;
+      border-radius: 10px;
+      max-width: 420px;
+      width: 92%;
+    }
+    .modal h3 {
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .selected-tour-label {
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .btn-close {
+      background: #e4e7eb;
+      color: var(--ink);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
     }
   </style>
 </head>
-<body class="selection:bg-gold/20 selection:text-navy">
+<body>
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-navy text-ivory/90 text-xs py-2 px-4 border-b border-gold/20">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center gap-4">
-        <span class="inline-flex items-center gap-1.5">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold"></i>
-          <span>Ditta Individuale • Aprilia (LT), Italia</span>
-        </span>
-        <span class="hidden sm:inline text-gold/40">|</span>
-        <span class="hidden sm:inline-flex items-center gap-1.5">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold"></i>
-          <span>Egitto: 50% alla prenotazione + 50% in Euro all'arrivo</span>
-        </span>
+  <header>
+    <div class="brand">Orizzonti Travel</div>
+    <div class="contacts">Email: orzzinttitrevl@gmil.com | WhatsApp: 00393751319679</div>
+  </header>
+
+  <section class="hero">
+    <h1>Itinerari Esclusivi in Egitto</h1>
+    <p>Esplora liberamente i nostri programmi. L'accesso e i dati di pagamento vengono richiesti solo al momento della prenotazione.</p>
+  </section>
+
+  <main class="tours-container">
+    <!-- 1. Tour Classico Crociera Sul Nilo -->
+    <article class="tour-card">
+      <div class="tour-header">
+        <h2>Tour Classico Crociera Sul Nilo (8 Giorni / 7 Notti)</h2>
+        <div class="price-box">1390€ adulto | 790€ (&lt; 12 anni)</div>
       </div>
-      <div class="flex items-center gap-4 ml-auto sm:ml-0">
-        <a href="mailto:orzzinttitrevl@gmil.com" class="hover:text-gold transition-colors inline-flex items-center gap-1">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-gold"></i>
-          <span>orzzinttitrevl@gmil.com</span>
-        </a>
-        <a href="https://wa.me/393751319679" target="_blank" rel="noopener" class="hover:text-gold transition-colors inline-flex items-center gap-1">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold"></i>
-          <span>+39 375 131 9679</span>
-        </a>
+      <ul class="itinerary">
+        <li><strong>Giorno 1°:</strong> Arrivo al Cairo, assistenza in aeroporto, incontro con guida archeologa parlante italiano e trasferimento in hotel (Cairo Pyramids, Pyramids Park Resort o similare)[span_1](start_span)[span_1](end_span).</li>
+        <li><strong>Giorno 2°:</strong> Visita alle Piramidi e Sfinge, tempio di granito rosa, piramide della regina, tempio funerario di Chefren, pranzo in villaggio beduino, Sakkara e Menfi[span_2](start_span)[span_2](end_span).</li>
+        <li><strong>Giorno 3°:</strong> Nuovo Museo Egizio (GEM) con il tesoro di Tutankhamon, pranzo sul Nilo, Cairo copto e islamico, mercato di Khan El Khalili[span_3](start_span)[span_3](end_span).</li>
+        <li><strong>Giorno 4°:</strong> Volo per Luxor, imbarco su motonave 5* in pensione completa (MS Queen Hansa o similare) e visita al Tempio di Luxor illuminato[span_4](start_span)[span_4](end_span).</li>
+        <li><strong>Giorno 5°:</strong> Valle dei Re, Colossi di Memnone, Tempio di Hatshepsut, Tempio di Karnak, navigazione verso Esna e spettacolo serale egiziano[span_5](start_span)[span_5](end_span).</li>
+        <li><strong>Giorno 6°:</strong> Navigazione verso Edfu (Tempio di Horus) e Kom Ombo (Tempio di Sobek e Museo delle mummie di coccodrilli), spettacolo nubiano serale[span_6](start_span)[span_6](end_span).</li>
+        <li><strong>Giorno 7°:</strong> Arrivo ad Aswan, visita ai templi di Abu Simbel, tempio della regina Nefertari e Tempio di Philae[span_7](start_span)[span_7](end_span).</li>
+        <li><strong>Giorno 8°:</strong> Colazione a bordo e trasferimento all'aeroporto in base all'orario del volo[span_8](start_span)[span_8](end_span).</li>
+      </ul>
+      <button class="btn-book" onclick="openBooking('Tour Classico Crociera Sul Nilo — 1390€ adulto / 790€ (< 12 anni)')">
+        Prenota Tour Classico Sul Nilo
+      </button>
+    </article>
+
+    <!-- 2. Tour Delle Oasi -->
+    <article class="tour-card">
+      <div class="tour-header">
+        <h2>Tour Delle Oasi (8 Giorni / 7 Notti)</h2>
+        <div class="price-box">1290€ adulto | 690€ (&lt; 12 anni)</div>
       </div>
+      <ul class="itinerary">
+        <li><strong>Giorno 1°:</strong> Arrivo al Cairo o Giza, assistenza in aeroporto, incontro con guida archeologa parlante italiano (Sabrio), cena e pernottamento in hotel[span_9](start_span)[span_9](end_span).</li>
+        <li><strong>Giorno 2°:</strong> Visita alle tre piramidi e Sfinge, tempio di granito rosa, piramide della regina, pranzo in villaggio beduino e nuovo Museo Egizio (GEM)[span_10](start_span)[span_10](end_span).</li>
+        <li><strong>Giorno 3°:</strong> Partenza per El Alamein (Sacrario Italiano), spiagge di Marsa Matrouh con pranzo sul mare, arrivo all'Oasi di Siwa e tramonto sull'isola di Fetnas[span_11](start_span)[span_11](end_span).</li>
+        <li><strong>Giorno 4°:</strong> Visite storiche a Siwa (Tempio dell'Oracolo, Bagno di Cleopatra, saline e laghi salati), safari in Jeep 4x4 nel Grande Mare di Sabbia, sorgente termale e Castello di Shali[span_12](start_span)[span_12](end_span).</li>
+        <li><strong>Giorno 5°:</strong> Rientro al Cairo con pranzo pic-nic, visita serale al Cairo islamico, quartiere El Moez e Khan El Khalili[span_13](start_span)[span_13](end_span).</li>
+        <li><strong>Giorno 6°:</strong> Partenza per l'Oasi di Bahariya, Jeep 4x4 verso Deserto Nero, Montagna di Cristallo, zona di El Akabat e campeggio nel Deserto Bianco con cena sotto le stelle[span_14](start_span)[span_14](end_span).</li>
+        <li><strong>Giorno 7°:</strong> Colazione nel Deserto Bianco, visita alle formazioni rocciose, pranzo presso le oasi e rientro in hotel al Cairo[span_15](start_span)[span_15](end_span).</li>
+        <li><strong>Giorno 8°:</strong> Colazione e trasferimento all'aeroporto secondo l'orario del volo[span_16](start_span)[span_16](end_span).</li>
+      </ul>
+      <button class="btn-book" onclick="openBooking('Tour Delle Oasi — 1290€ adulto / 690€ (< 12 anni)')">
+        Prenota Tour Delle Oasi
+      </button>
+    </article>
+
+    <!-- 3. Black Tour -->
+    <article class="tour-card">
+      <div class="tour-header">
+        <h2>Black Tour Egitto</h2>
+        <div class="price-box">1290€ adulto | 690€ (&lt; 12 anni)</div>
+      </div>
+      <ul class="itinerary">
+        <li>Itinerario combinato tra Cairo, Piramidi, Deserto Nero, Montagna di Cristallo, Deserto Bianco, oasi e crociera sul Nilo con guida parlante italiano.</li>
+        <li>Trasferimenti organizzati e assistenza dedicata per tutta la durata del viaggio.</li>
+      </ul>
+      <button class="btn-book" onclick="openBooking('Black Tour Egitto — 1290€ adulto / 690€ (< 12 anni)')">
+        Prenota Black Tour
+      </button>
+    </article>
+  </main>
+
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+      <h3>Accesso e Prenotazione</h3>
+      <div class="selected-tour-label" id="selectedTourText"></div>
+      <form onsubmit="submitBooking(event)">
+        <div class="form-group">
+          <label for="clientEmail">Email</label>
+          <input type="email" id="clientEmail" required placeholder="nome@esempio.it" />
+        </div>
+        <div class="form-group">
+          <label for="clientPassword">Password</label>
+          <input type="password" id="clientPassword" required placeholder="Inserisci password" />
+        </div>
+        <div class="modal-buttons">
+          <button type="button" class="btn-close" onclick="closeBooking()">Chiudi</button>
+          <button type="submit" class="btn-submit">Continua al Pagamento</button>
+        </div>
+      </form>
     </div>
   </div>
 
-  <!-- Main Sticky Navigation -->
-  <header class="sticky top-0 z-40 glass-nav transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center border border-gold/50 shadow-sm group-hover:border-gold transition-colors">
-          <i data-lucide="compass" class="w-5 h-5 text-gold"></i>
-        </div>
-        <div>
-          <span class="font-editorial text-2xl font-bold tracking-wide text-navy block leading-none">ORIZZONTI</span>
-          <span class="text-[10px] uppercase tracking-[0.28em] text-gold font-semibold block mt-0.5">Travel Italia</span>
-        </div>
-      </a>
+  <script>
+    function openBooking(tourName) {
+      document.getElementById('selectedTourText').textContent = tourName;
+      document.getElementById('bookingModal').classList.add('open');
+    }
 
-      <!-- Desktop Menu -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal">
-        <a href="#destinazioni" class="hover:text-gold transition-colors">Destinazioni</a>
-        <a href="#pacchetti" class="hover:text-gold transition-colors">Pacchetti &amp; Tour</a>
-        <a href="#trasparenza" class="hover:text-gold transition-colors">Chi Siamo &amp; Pagamenti</a>
-        <a href="#prenota" class="hover:text-gold transition-colors">Prenotazione</a>
-      </nav>
+    function closeBooking() {
+      document.getElementById('bookingModal').classList.remove('open');
+    }
 
-      <!-- Auth / Client Area Controls -->
-      <div class="flex items-center gap-3" id="navAuthContainer">
-        <!-- Rendered dynamically by JS -->
-      </div>
-    </div>
-  </header>
+    function submitBooking(e) {
+      e.preventDefault();
+      alert("Accesso confermato! Ora puoi procedere al pagamento.");
+      closeBooking();
+    }
+  </script>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
-    <img 
-      src="https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&w=2000&q=85" 
-      alt="Piramidi di Giza e Orizzonti Travel" 
-      class="absolute inset-0 w-full h-full object-cover object-center scale-105"
-    />
-    <div class="absolute inset-0 hero-overlay"></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-ivory py-20">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy/70 border border-gold/40 backdrop-blur-md text-xs uppercase tracking-[0.2em] text-gold mb-6">
-        <i data-lucide="award" class="w-3.5 h-3.5"></i>
-        <span>Viaggi Su Misura dal Cuore dell'Italia</span>
-      </div>
-
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-6">
-        L'Arte di Viaggiare tra <br class="hidden sm:inline" />
-        <span class="italic text-gold font-normal">Storia, Deserto e Mare</span>
-      </h1>
-
-      <p class="max-w-2xl mx-auto text-base sm:text-lg text-ivory/85 font-light leading-relaxed mb-10">
-        Itinerari selezionati in <strong>Egitto, Marocco, Turchia e Maldive</strong> con guide parlanti italiano, trasparenza totale e assistenza diretta dalla nostra sede di Aprilia (LT).
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#pacchetti" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold hover:bg-golddark text-navy font-semibold text-sm tracking-wide transition-all shadow-lg flex items-center justify-center gap-2">
-          <span>Esplora i Pacchetti</span>
-          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
-        </a>
-        <button onclick="openAuthModal('login')" id="heroAuthBtn" class="w-full sm:w-auto px-8 py-4 rounded-full bg-ivory/10 hover:bg-ivory/20 text-ivory border border-ivory/30 backdrop-blur-md font-medium text-sm tracking-wide transition-all flex items-center justify-center gap-2">
-          <i data-lucide="user-check" class="w-4 h-4 text-gold"></i>
-          <span>Area Riservata Clienti</span>
-        </button>
-      </div>
-
-      <!-- Trust Badges -->
-      <div class="mt-14 pt-8 border-t border-ivory/15 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left max-w-4xl mx-auto">
-        <div>
-          <p class="text-gold font-editorial text-2xl font-semibold">50% + 50%</p>
-          <p class="text-xs text-ivory/75 mt-0.5">Acconto e saldo in Euro all'arrivo (Tour Egitto)</p>
-        </div>
-        <div>
-          <p class="text-gold font-editorial text-2xl font-semibold">Guide Italiane</p>
-          <p class="text-xs text-ivory/75 mt-0.5">Archeologi e accompagnatori certificati</p>
-        </div>
-        <div>
-          <p class="text-gold font-editorial text-2xl font-semibold">Partner Diretti</p>
-          <p class="text-xs text-ivory/75 mt-0.5">Operatori locali verificati senza intermediari</p>
-        </div>
-        <div>
-          <p class="text-gold font-editorial text-2xl font-semibold">100% Trasparenza</p>
-          <p class="text-xs text-ivory/75 mt-0.5">Foto reali degli itinerari e supporto continuo</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Destination Filter & Packages Section -->
-  <section id="destinazioni" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div id="pacchetti" class="text-center max-w-3xl mx-auto mb-12">
-      <span class="text-xs uppercase tracking-[0.25em] text-gold font-semibold">Collezione 2026 / 2027</span>
-      <h2 class="text-3xl sm:text-5xl font-semibold text-navy mt-2 mb-4">Le Nostre Destinazioni Esclusive</h2>
-      <p class="text-slatewarm text-sm sm:text-base leading-relaxed">
-        Seleziona una destinazione per scoprire i programmi dettagliati. Per garantire la massima sicurezza, <strong>l'accesso o la registrazione sono richiesti prima di procedere all'acquisto o alla prenotazione</strong>.
-      </p>
-    </div>
-
-    <!-- Filter Tabs -->
-    <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12" id="filterTabs">
-      <button onclick="filterPackages('all')" data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-navy text-ivory shadow-sm">
-        Tutte le Destinazioni
-      </button>
-      <button onclick="filterPackages('egitto')" data-filter="egitto" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-champagne text-charcoal hover:bg-gold/20">
-        Egitto (Classico &amp; Oasi)
-      </button>
-      <button onclick="filterPackages('marocco')" data-filter="marocco" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-champagne text-charcoal hover:bg-gold/20">
-        Marocco &amp; Sahara
-      </button>
-      <button onclick="filterPackages('turchia')" data-filter="turchia" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-champagne text-charcoal hover:bg-gold/20">
-        Turchia &amp; Cappadocia
-      </button>
-      <button onclick="filterPackages('maldive')" data-filter="maldive" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-champagne text-charcoal hover:bg-gold/20">
-        Maldive Relax
-      </button>
-    </div>
-
-    <!-- Packages Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="packagesGrid">
-      <!-- Populated by JS -->
-    </div>
-  </section>
-
-  <div class="gold-divider max-w-6xl mx-auto"></div>
-
-  <!-- Transparency & Payment Policy Section -->
-  <section id="trasparenza" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="bg-champagne/70 border border-gold/25 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-luxury">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold font-semibold">
-            <i data-lucide="file-check-2" class="w-4 h-4"></i>
-            <span>Impegno &amp; Chiarezza</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-semibold text-navy leading-tight">
-            Chi Siamo: Trasparenza Totale dal Primo Contatto
-          </h2>
-          <p class="text-charcoal/85 text-sm sm:text-base leading-relaxed">
-            <strong>Orizzonti Travel</strong> opera come <strong>Ditta Individuale</strong> con sede ad <strong>Aprilia (Lazio), Italia</strong>. Collaboriamo direttamente con tour operator locali selezionati e guide archeologiche parlanti italiano per offrire esperienze autentiche senza intermediari superflui.
-          </p>
-          <p class="text-charcoal/85 text-sm sm:text-base leading-relaxed">
-            Ogni fotografia pubblicata nei nostri cataloghi corrisponde fedelmente alle tappe reali dell'itinerario. Prima di ogni conferma riceverai il programma dettagliato, le condizioni chiare e l'assistenza diretta via email o WhatsApp.
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="bg-ivory p-5 rounded-2xl border border-gold/20">
-              <div class="flex items-center gap-2.5 text-navy font-semibold text-sm mb-2">
-                <i data-lucide="wallet" class="w-4 h-4 text-gold"></i>
-                <span>Formula Egitto 50% + 50%</span>
-              </div>
-              <p class="text-xs text-slatewarm leading-relaxed">
-                Esclusivamente per i pacchetti in Egitto: versi il <strong>50% alla prenotazione</strong> e il restante <strong>50% in Euro direttamente all'arrivo</strong> in Egitto.
-              </p>
-            </div>
-            <div class="bg-ivory p-5 rounded-2xl border border-gold/20">
-              <div class="flex items-center gap-2.5 text-navy font-semibold text-sm mb-2">
-                <i data-lucide="credit-card" class="w-4 h-4 text-gold"></i>
-                <span>Metodi di Pagamento Sicuri</span>
-              </div>
-              <p class="text-xs text-slatewarm leading-relaxed">
-                Accettiamo <strong>PayPal, Carta di Credito (Stripe)</strong> e <strong>Bonifico Bancario</strong> intestato al titolare, con ricevuta ufficiale inviata via email.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-5">
-          <div class="bg-navy text-ivory rounded-2xl p-8 border border-gold/30 shadow-xl space-y-6">
-            <div class="flex items-center justify-between border-b border-ivory/10 pb-4">
-              <div>
-                <p class="text-xs uppercase tracking-widest text-gold">Contatti Ufficiali</p>
-                <h3 class="text-2xl font-semibold mt-1">Orizzonti Travel</h3>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center">
-                <i data-lucide="globe" class="w-5 h-5 text-gold"></i>
-              </div>
-            </div>
-
-            <ul class="space-y-4 text-sm">
-              <li class="flex items-start gap-3">
-                <i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0 mt-1"></i>
-                <div>
-                  <span class="text-ivory/60 text-xs block">Sede Operativa</span>
-                  <span>Aprilia (LT), Lazio – Italia (Ditta Individuale)</span>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <i data-lucide="mail" class="w-4 h-4 text-gold shrink-0 mt-1"></i>
-                <div>
-                  <span class="text-ivory/60 text-xs block">Email Ufficiale Prenotazioni &amp; Supporto</span>
-                  <a href="mailto:orzzinttitrevl@gmil.com" class="text-gold hover:underline font-medium">orzzinttitrevl@gmil.com</a>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <i data-lucide="message-circle" class="w-4 h-4 text-gold shrink-0 mt-1"></i>
-                <div>
-                  <span class="text-ivory/60 text-xs block">Assistenza Diretta WhatsApp</span>
-                  <a href="https://wa.me/393751319679" target="_blank" rel="noopener" class="hover:text-gold transition-colors font-medium">+39 375 131 9679</a>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <i data-lucide="link" class="w-4 h-4 text-gold shrink-0 mt-1"></i>
-                <div>
-                  <span class="text-ivory/60 text-xs block">Dominio Ufficiale</span>
-                  <span>www.orizzontitravel.it</span>
-                </div>
-              </li>
-            </ul>
-
-            <div class="pt-2">
-              <button onclick="openAuthModal('register')" class="w-full py-3.5 px-5 rounded-xl bg-gold hover:bg-golddark text-navy font-semibold text-sm transition-colors flex items-center justify-center gap-2">
-                <i data-lucide="user-plus" class="w-4 h-4"></i>
-                <span>Crea il Tuo Account Cliente</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Booking Section (Protected by Login Requirement) -->
-  <section id="prenota" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-    <div class="text-center mb-10">
-      <span class="text-xs uppercase tracking-[0.25em] text-gold font-semibold">Prenotazione Sicura</span>
-      <h2 class="text-3xl sm:text-5xl font-semibold text-navy mt-2">Conferma il Tuo Viaggio</h2>
-      <p class="text-slatewarm text-sm sm:text-base mt-3 max-w-xl mx-auto">
-        Compila i dettagli della tua richiesta. Tutte le prenotazioni vengono registrate nel tuo profilo e inviate direttamente a <strong>orzzinttitrevl@gmil.com</strong>.
-      </p>
-    </div>
-
-    <!-- Login Lock Banner (Visible only when logged out) -->
-    <div id="bookingLockBanner" class="mb-8 bg-navy text-ivory rounded-2xl p-6 border border-gold/40 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-card">
-      <div class="flex items-center gap-4 text-center sm:text-left">
-        <div class="w-12 h-12 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center shrink-0 mx-auto sm:mx-0">
-          <i data-lucide="lock" class="w-5 h-5 text-gold"></i>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-ivory">Accesso Richiesto Prima dell'Acquisto</h3>
-          <p class="text-xs sm:text-sm text-ivory/75 mt-0.5">
-            Per tutelare la tua prenotazione, è necessario accedere o registrarsi prima di inviare un ordine.
-          </p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2.5 shrink-0">
-        <button onclick="openAuthModal('login')" class="px-5 py-2.5 rounded-xl bg-gold hover:bg-golddark text-navy font-semibold text-xs sm:text-sm transition-colors">
-          Accedi
-        </button>
-        <button onclick="openAuthModal('register')" class="px-5 py-2.5 rounded-xl bg-ivory/10 hover:bg-ivory/20 text-ivory border border-ivory/25 font-medium text-xs sm:text-sm transition-colors">
-          Registrati
-        </button>
-      </div>
-    </div>
-
-    <!-- Booking Form Card -->
-    <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="bg-white rounded-3xl p-6 sm:p-10 border border-gold/20 shadow-luxury space-y-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-navy mb-2">Nome e Cognome *</label>
-          <input type="text" id="bookName" required placeholder="Es. Marco Ross
+</body>
+        </html>
+  
+        
