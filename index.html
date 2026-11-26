@@ -1,298 +1,94 @@
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orizzonti Travel | Viaggi Esclusivi in Egitto</title>
-    <meta name="description" content="Orizzonti Travel - Tour in Egitto con guida archeologa parlante italiano. Prenota ora e paga il 50% all'arrivo.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ivory: '#FAF8F5',
-                        champagne: '#F3EFEA',
-                        navy: '#0F1E2E',
-                        navylight: '#1A2F45',
-                        gold: '#B89352',
-                        golddark: '#9A783C',
-                        charcoal: '#24292F',
-                        slatewarm: '#5C6470',
-                    },
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        body {
-            background-color: #FAF8F5;
-            color: #24292F;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        h1, h2, h3, .font-editorial {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101820">
+  <meta name="description" content="Orizzonti Travel: viaggi ed esperienze in Egitto, Marocco, Turchia e Maldive.">
+  <title>Orizzonti Travel | Discover the World</title>
+  <style>
+    :root{--bg:#0b1118;--panel:#121c27;--gold:#d8b56d;--gold2:#f0d99f;--white:#f7f4ed;--muted:#b7c0c9;--line:#293541}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+    .wrap{width:min(1160px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(11,17,24,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:Georgia,serif;font-size:24px;letter-spacing:2px;color:var(--gold2);font-weight:bold}.brand small{display:block;font:10px Arial;letter-spacing:4px;color:var(--muted);text-align:center}
+    .links{display:flex;align-items:center;gap:24px;color:#e7e4dc;font-size:14px}.links a:hover{color:var(--gold2)}.right{display:flex;align-items:center;gap:12px}
+    .lang{background:#17222e;border:1px solid var(--line);color:white;border-radius:8px;padding:8px}.menu{display:none;background:none;color:white;border:0;font-size:25px}
+    .hero{min-height:650px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(5,10,15,.91),rgba(5,10,15,.55),rgba(5,10,15,.2)),url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero-content{max-width:690px;padding:100px 0}.eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:4px;font-size:12px}.hero h1{font:clamp(42px,7vw,76px)/1.08 Georgia,serif;margin:18px 0}.hero p{font-size:18px;color:#e2e2df;max-width:590px}
+    .btn{display:inline-block;background:var(--gold);color:#15191d;padding:13px 22px;border-radius:4px;font-weight:bold;border:1px solid var(--gold);cursor:pointer;transition:.2s}.btn:hover{background:var(--gold2);transform:translateY(-2px)}.btn.outline{background:transparent;color:var(--gold2)}
+    section{padding:82px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 42px}.section-head h2{font:clamp(32px,4vw,48px) Georgia,serif;margin:8px 0 12px}.section-head p{color:var(--muted);margin:0}
+    .destinations{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.destination{position:relative;min-height:370px;border-radius:8px;overflow:hidden;background:#202a34;border:1px solid var(--line)}
+    .destination img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .5s}.destination:hover img{transform:scale(1.06)}.destination:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.88),transparent 70%)}
+    .destination-info{position:absolute;z-index:1;bottom:22px;left:22px;right:22px}.destination h3{font:30px Georgia,serif;margin:0 0 6px}.destination p{color:#e2e2e2;margin:0 0 14px;font-size:14px}
+    .about{background:#101923}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-art{min-height:400px;border-radius:8px;background:linear-gradient(0deg,rgba(0,0,0,.18),rgba(0,0,0,.05)),url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80') center/cover}
+    .about h2{font:clamp(32px,4vw,46px) Georgia,serif;margin:10px 0}.about p{color:var(--muted)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.feature{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:7px}.feature b{color:var(--gold2);display:block;margin-bottom:7px}
+    .payment{background:#0f1720}.payment-card{max-width:850px;margin:auto;padding:34px;border:1px solid #695936;background:linear-gradient(135deg,#17222d,#101820);border-radius:8px}.payment-card h3{font:30px Georgia,serif;color:var(--gold2);margin-top:0}.payment-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}.payment-split div{padding:18px;background:#0d151e;border-radius:6px}.payment-split strong{display:block;font-size:26px;color:var(--gold2)}.note{font-size:13px;color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px}.contact-copy p{color:var(--muted)}form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--panel);padding:26px;border:1px solid var(--line);border-radius:8px}form label{font-size:13px;color:var(--muted)}form input,form select,form textarea{width:100%;margin-top:6px;padding:12px;background:#0b131c;color:white;border:1px solid #344352;border-radius:4px}form textarea{min-height:110px;resize:vertical}.full{grid-column:1/-1}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.wa{position:fixed;right:20px;bottom:20px;z-index:30;background:#20bd65;color:#06170d;padding:13px 18px;border-radius:30px;font-weight:bold;box-shadow:0 8px 30px #0008}
+    [dir=rtl] body{text-align:right}[dir=rtl] .hero-content,[dir=rtl] .destination-info{text-align:right}[dir=rtl] .wa{right:auto;left:20px}
+    @media(max-width:900px){.destinations{grid-template-columns:repeat(2,1fr)}.links{gap:13px}.about-grid,.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.nav{min-height:66px}.menu{display:block}.links{display:none;position:absolute;top:66px;left:0;right:0;background:#101923;padding:18px 5%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.open{display:flex}.brand{font-size:20px}.hero{min-height:590px}.hero-content{padding:75px 0}.destinations{grid-template-columns:1fr 1fr;gap:10px}.destination{min-height:270px}.destination-info{left:13px;right:13px;bottom:14px}.destination h3{font-size:23px}.destination p{font-size:12px}.features{grid-template-columns:1fr}.payment-split{grid-template-columns:1fr}form{grid-template-columns:1fr}.full{grid-column:auto}section{padding:62px 0}}
+  </style>
 </head>
-<body class="selection:bg-gold/20 selection:text-navy">
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home">ORIZZONTI TRAVEL<small>DISCOVER THE WORLD</small></a>
+    <nav class="links" id="navLinks">
+      <a href="#home" data-i18n="home">Home</a><a href="#destinations" data-i18n="destinations">Destinazioni</a><a href="#about" data-i18n="about">Chi siamo</a><a href="#payment" data-i18n="payment">Pagamenti</a><a href="#contact" data-i18n="contact">Contatti</a>
+    </nav>
+    <div class="right"><select class="lang" id="language" aria-label="Language"><option value="it">IT</option><option value="en">EN</option><option value="ar">عربي</option></select><button class="menu" id="menuBtn" aria-label="Menu">☰</button></div>
+  </div>
+</header>
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-navy text-ivory/90 text-xs py-2.5 px-4 border-b border-gold/20">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold"></i>
-                <span>Egitto: <strong>50% alla prenotazione + 50% in Euro all'arrivo</strong></span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="mailto:orzzinttitrevl@gmil.com" class="hover:text-gold transition-colors flex items-center gap-1">
-                    <i data-lucide="mail" class="w-3.5 h-3.5 text-gold"></i>
-                    <span>orzzinttitrevl@gmil.com</span>
-                </a>
-                <a href="https://wa.me/393751319679" target="_blank" class="hover:text-gold transition-colors flex items-center gap-1 font-medium text-gold">
-                    <i data-lucide="phone" class="w-3.5 h-3.5"></i>
-                    <span>+39 375 131 9679</span>
-                </a>
-            </div>
-        </div>
+<main>
+  <section class="hero" id="home"><div class="wrap"><div class="hero-content">
+    <div class="eyebrow" data-i18n="eyebrow">Viaggi selezionati · Esperienze autentiche</div>
+    <h1 data-i18n="heroTitle">Il mondo è più bello da scoprire.</h1>
+    <p data-i18n="heroText">Dalle meraviglie dell’antico Egitto alle atmosfere del Marocco, dalla magia della Turchia alle acque cristalline delle Maldive: il tuo prossimo viaggio comincia qui.</p>
+    <a class="btn" href="#destinations" data-i18n="explore">Scopri le destinazioni</a>
+  </div></div></section>
+
+  <section id="destinations"><div class="wrap">
+    <div class="section-head"><div class="eyebrow" data-i18n="choose">Scegli la tua prossima esperienza</div><h2 data-i18n="destTitle">Destinazioni da ricordare</h2><p data-i18n="destText">Ogni luogo ha una storia. Noi ti aiutiamo a viverla.</p></div>
+    <div class="destinations">
+      <article class="destination"><img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80" alt="Piramidi di Giza"><div class="destination-info"><h3>Egypt</h3><p data-i18n="egyptDesc">Piramidi, Nilo, deserti e Mar Rosso.</p><a class="btn outline" href="#contact" data-destination="Egitto" data-i18n="request">Richiedi informazioni</a></div></article>
+      <article class="destination"><img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=900&q=80" alt="Marocco"><div class="destination-info"><h3>Morocco</h3><p data-i18n="moroccoDesc">Medine, colori, kasbah e deserto.</p><a class="btn outline" href="#contact" data-destination="Marocco" data-i18n="request">Richiedi informazioni</a></div></article>
+      <article class="destination"><img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=80" alt="Istanbul in Turchia"><div class="destination-info"><h3>Türkiye</h3><p data-i18n="turkeyDesc">Istanbul, Cappadocia e paesaggi unici.</p><a class="btn outline" href="#contact" data-destination="Turchia" data-i18n="request">Richiedi informazioni</a></div></article>
+      <article class="destination"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=80" alt="Maldive"><div class="destination-info"><h3>Maldives</h3><p data-i18n="maldivesDesc">Lagune turchesi e relax sull’oceano.</p><a class="btn outline" href="#contact" data-destination="Maldive" data-i18n="request">Richiedi informazioni</a></div></article>
     </div>
+  </div></section>
 
-    <!-- Header -->
-    <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md border-b border-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center border border-gold/40">
-                    <i data-lucide="compass" class="w-5 h-5 text-gold"></i>
-                </div>
-                <div>
-                    <span class="font-editorial text-2xl font-bold tracking-wide text-navy block leading-none">ORIZZONTI</span>
-                    <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-semibold block mt-0.5">Travel</span>
-                </div>
-            </a>
+  <section class="about" id="about"><div class="wrap about-grid"><div class="about-art" role="img" aria-label="Paesaggio di viaggio"></div><div><div class="eyebrow" data-i18n="ourWay">Il nostro modo di viaggiare</div><h2 data-i18n="aboutTitle">Non solo una meta. Un’esperienza da vivere.</h2><p data-i18n="aboutText">Orizzonti Travel ti accompagna nella scoperta di destinazioni straordinarie con proposte curate e assistenza nella fase di richiesta e organizzazione del viaggio. Raccontaci cosa sogni: ti aiuteremo a trovare il programma più adatto.</p><div class="features"><div class="feature"><b data-i18n="care">Attenzione</b><span data-i18n="careText">Ascoltiamo le tue esigenze.</span></div><div class="feature"><b data-i18n="ideas">Ispirazione</b><span data-i18n="ideasText">Idee per viaggi indimenticabili.</span></div><div class="feature"><b data-i18n="support">Supporto</b><span data-i18n="supportText">Un contatto diretto per le tue richieste.</span></div></div></div></div></section>
 
-            <div id="authControls" class="flex items-center gap-3">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-    </header>
+  <section class="payment" id="payment"><div class="wrap"><div class="section-head"><div class="eyebrow" data-i18n="clearInfo">Informazioni chiare</div><h2 data-i18n="payTitle">Modalità di pagamento</h2><p data-i18n="payIntro">Le condizioni vengono confermate insieme al programma scelto prima di procedere.</p></div>
+    <div class="payment-card"><h3 data-i18n="egyptPayTitle">Viaggi in Egitto</h3><p data-i18n="egyptPayText">Per i programmi in Egitto, la modalità concordata prevede il 50% al momento della prenotazione e il restante 50% in euro all’arrivo in Egitto.</p><div class="payment-split"><div><strong>50%</strong><span data-i18n="deposit">Alla prenotazione</span></div><div><strong>50%</strong><span data-i18n="arrival">All’arrivo in Egitto, in euro</span></div></div><p class="note" data-i18n="otherPay">Per Marocco, Turchia e Maldive, modalità e scadenze di pagamento saranno comunicate nel preventivo prima della conferma. Nessun pagamento viene richiesto tramite questo sito.</p></div>
+  </div></section>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-navy">
-        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1920&q=80" 
-             alt="Piramidi di Giza e Orizzonti Travel" 
-             class="absolute inset-0 w-full h-full object-cover opacity-50">
-        <div class="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-navy/90"></div>
-        
-        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-20">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ivory/10 border border-gold/40 backdrop-blur-md mb-6">
-                <i data-lucide="award" class="w-4 h-4 text-gold"></i>
-                <span class="text-xs uppercase tracking-[0.2em] text-ivory font-medium">Viaggi Su Misura dal Cuore dell'Italia</span>
-            </div>
-            
-            <h1 class="text-4xl sm:text-6xl font-bold text-ivory leading-tight mb-6">
-                Itinerari Esclusivi in <span class="italic font-normal text-gold">Egitto</span>
-            </h1>
-            
-            <p class="max-w-2xl mx-auto text-base sm:text-lg text-ivory/85 font-light leading-relaxed mb-10">
-                Esplora liberamente i nostri programmi. L'accesso e i dati di pagamento vengono richiesti solo al momento della prenotazione.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#pacchetti" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold hover:bg-golddark text-navy font-semibold transition-all shadow-lg flex items-center justify-center gap-2">
-                    <span>Esplora i Pacchetti</span>
-                    <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
-                </a>
-                <button onclick="openAuthModal('login')" id="heroAuthBtn" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-ivory/10 hover:bg-ivory/20 text-ivory border border-ivory/30 backdrop-blur-md font-medium transition-all flex items-center justify-center gap-2">
-                    <i data-lucide="user-check" class="w-4 h-4 text-gold"></i>
-                    <span>Area Riservata Clienti</span>
-                </button>
-            </div>
-        </div>
-    </section>
+  <section id="contact"><div class="wrap contact-grid"><div class="contact-copy"><div class="eyebrow" data-i18n="talk">Parliamo del tuo prossimo viaggio</div><h2 style="font:42px Georgia,serif" data-i18n="contactTitle">Raccontaci cosa stai cercando.</h2><p data-i18n="contactText">Compila il modulo: si aprirà WhatsApp con il tuo messaggio già pronto da inviare. Ti risponderemo per approfondire la tua richiesta.</p><p><b style="color:var(--gold2)">ORIZZONTI TRAVEL</b><br> <span data-i18n="reply">Richieste e informazioni viaggi</span></p></div>
+    <form id="requestForm">
+      <label><span data-i18n="name">Nome</span><input id="name" required autocomplete="name" placeholder="Nome e cognome"></label>
+      <label><span data-i18n="email">Email</span><input id="email" type="email" required autocomplete="email" placeholder="email@example.com"></label>
+      <label><span data-i18n="destination">Destinazione</span><select id="destination" required><option value="" data-i18n="selectDest">Seleziona una destinazione</option><option>Egitto</option><option>Marocco</option><option>Turchia</option><option>Maldive</option><option data-i18n="other">Altra destinazione</option></select></label>
+      <label><span data-i18n="people">Numero di viaggiatori</span><input id="people" type="number" min="1" max="30" value="2" required></label>
+      <label class="full"><span data-i18n="message">Messaggio</span><textarea id="message" placeholder="Date indicative, durata e tipo di viaggio..."></textarea></label>
+      <button class="btn full" type="submit" data-i18n="send">Invia richiesta su WhatsApp</button>
+      <p class="note full" data-i18n="privacy">Inviando la richiesta, si aprirà WhatsApp. Non inserire dati di pagamento o documenti personali nel modulo.</p>
+    </form>
+  </div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Orizzonti Travel. <span data-i18n="rights">Tutti i diritti riservati.</span></span><span>Discover the World. Experience More.</span></div></footer>
+<a class="wa" id="waFloat" href="#" target="_blank" rel="noopener">WhatsApp</a>
 
-    <!-- Packages Section -->
-    <section id="pacchetti" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-xs uppercase tracking-[0.25em] text-gold font-semibold block mb-2">Le Nostre Proposte</span>
-            <h2 class="text-3xl sm:text-5xl font-bold text-navy mb-4">I Nostri Tour in Egitto</h2>
-            <p class="text-slatewarm text-sm sm:text-base">
-                Ogni programma include guida archeologa parlante italiano e assistenza dedicata.
-            </p>
-        </div>
+<script>
+  // INSERISCI QUI IL NUMERO WHATSAPP COMPLETO, SOLO CIFRE, CON PREFISSO PAESE.
+  // Esempio Italia: 393331234567
+  const WHATSAPP_NUMBER = "";
+  const CONTACT_EMAIL = "orzzintetravel@gmail.com";
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <!-- Package 1: Tour Classico Crociera Sul Nilo -->
-            <div class="bg-white rounded-3xl overflow-hidden border border-gold/20 shadow-sm hover:shadow-xl transition-all flex flex-col">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&w=800&q=80" 
-                         alt="Tour Classico Crociera Sul Nilo" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-4 right-4 bg-navy/90 backdrop-blur-md text-gold px-4 py-1.5 rounded-full text-xs font-semibold border border-gold/30">
-                        8 Giorni / 7 Notti
-                    </div>
-                </div>
-                
-                <div class="p-6 sm:p-8 flex-1 flex flex-col">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Tour Classico Crociera Sul Nilo</h3>
-                    
-                    <div class="bg-champagne/70 border border-gold/20 rounded-xl px-4 py-2.5 mb-6 text-center">
-                        <span class="text-navy font-bold text-sm sm:text-base">1390€ adulto | 790€ (&lt; 12 anni)</span>
-                    </div>
-                    
-                    <ul class="space-y-3 text-sm text-charcoal/90 mb-8 flex-1">
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 1:</strong> Arrivo al Cairo, assistenza in aeroporto, incontro con guida archeologa parlante italiano e trasferimento in hotel (Cairo Pyramids, Pyramids Park Resort o similare).</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 2:</strong> Visita alle Piramidi e Sfinge, tempio di granito rosa, piramide della regina, tempio funerario di Chefren, pranzo in villaggio beduino, Sakkara e Menfi.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 3:</strong> Nuovo Museo Egizio (GEM) con il tesoro di Tutankhamon, pranzo sul Nilo, Cairo copto e islamico, mercato di Khan El Khalili.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 4:</strong> Volo per Luxor, imbarco su motonave 5* in pensione completa (MS Queen Hansa o similare) e visita al Tempio di Luxor illuminato.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 5:</strong> Valle dei Re, Colossi di Memnone, Tempio di Hatshepsut, Tempio di Karnak, navigazione verso Esna e spettacolo serale egiziano.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 6:</strong> Navigazione verso Edfu (Tempio di Horus) e Kom Ombo (Tempio di Sobek e Museo delle mummie di coccodrilli), spettacolo nubiano serale.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 7:</strong> Arrivo ad Aswan, visita ai templi di Abu Simbel, tempio della regina Nefertari e Tempio di Philae.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 8:</strong> Colazione a bordo e trasferimento all'aeroporto in base all'orario del volo.</span>
-                        </li>
-                    </ul>
-                    
-                    <button onclick="handleBookClick('Tour Classico Crociera Sul Nilo (1390€ adulto / 790€ bambini)')" 
-                            class="w-full py-3.5 px-6 rounded-xl bg-gold hover:bg-golddark text-navy font-bold transition-all shadow-md flex items-center justify-center gap-2">
-                        <span>Prenota Tour Classico Sul Nilo</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Package 2: Tour Delle Oasi -->
-            <div class="bg-white rounded-3xl overflow-hidden border border-gold/20 shadow-sm hover:shadow-xl transition-all flex flex-col">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=800&q=80" 
-                         alt="Tour Delle Oasi Deserto Bianco e Siwa" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-4 right-4 bg-navy/90 backdrop-blur-md text-gold px-4 py-1.5 rounded-full text-xs font-semibold border border-gold/30">
-                        8 Giorni / 7 Notti
-                    </div>
-                </div>
-                
-                <div class="p-6 sm:p-8 flex-1 flex flex-col">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Tour Delle Oasi</h3>
-                    
-                    <div class="bg-champagne/70 border border-gold/20 rounded-xl px-4 py-2.5 mb-6 text-center">
-                        <span class="text-navy font-bold text-sm sm:text-base">1290€ adulto | 690€ (&lt; 12 anni)</span>
-                    </div>
-                    
-                    <ul class="space-y-3 text-sm text-charcoal/90 mb-8 flex-1">
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 1:</strong> Arrivo al Cairo o Giza, assistenza in aeroporto, incontro con guida archeologa parlante italiano (Sabrio), cena e pernottamento in hotel.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 2:</strong> Visita alle tre piramidi e Sfinge, tempio di granito rosa, piramide della regina, pranzo in villaggio beduino e nuovo Museo Egizio (GEM).</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 3:</strong> Partenza per El Alamein (Sacrario Italiano), spiagge di Marsa Matrouh con pranzo sul mare, arrivo all'Oasi di Siwa e tramonto sull'isola di Fetnas.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 4:</strong> Visite storiche a Siwa (Tempio dell'Oracolo, Bagno di Cleopatra, saline e laghi salati), safari in Jeep 4x4 nel Grande Mare di Sabbia, sorgente termale e Castello di Shali.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 5:</strong> Rientro al Cairo con pranzo pic-nic, visita serale al Cairo islamico, quartiere El Moez e Khan El Khalili.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 6:</strong> Partenza per l'Oasi di Bahariya, Jeep 4x4 verso Deserto Nero, Montagna di Cristallo, zona di El Akabat e campeggio nel Deserto Bianco con cena sotto le stelle.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 7:</strong> Colazione nel Deserto Bianco, visita alle formazioni rocciose, pranzo presso le oasi e rientro in hotel al Cairo.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 8:</strong> Colazione e trasferimento all'aeroporto secondo l'orario del volo.</span>
-                        </li>
-                    </ul>
-                    
-                    <button onclick="handleBookClick('Tour Delle Oasi (1290€ adulto / 690€ bambini)')" 
-                            class="w-full py-3.5 px-6 rounded-xl bg-gold hover:bg-golddark text-navy font-bold transition-all shadow-md flex items-center justify-center gap-2">
-                        <span>Prenota Tour Delle Oasi</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Package 3: Black Tour Egitto -->
-            <div class="bg-white rounded-3xl overflow-hidden border border-gold/20 shadow-sm hover:shadow-xl transition-all flex flex-col">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=800&q=80" 
-                         alt="Black Tour Egitto Cairo Deserto e Nilo" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-4 right-4 bg-navy/90 backdrop-blur-md text-gold px-4 py-1.5 rounded-full text-xs font-semibold border border-gold/30">
-                        8 Giorni / 7 Notti
-                    </div>
-                </div>
-                
-                <div class="p-6 sm:p-8 flex-1 flex flex-col">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Black Tour Egitto</h3>
-                    
-                    <div class="bg-champagne/70 border border-gold/20 rounded-xl px-4 py-2.5 mb-6 text-center">
-                        <span class="text-navy font-bold text-sm sm:text-base">1290€ adulto | 690€ (&lt; 12 anni)</span>
-                    </div>
-                    
-                    <ul class="space-y-3 text-sm text-charcoal/90 mb-8 flex-1">
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 1:</strong> Arrivo al Cairo, assistenza in aeroporto con guida archeologa parlante italiano e trasferimento in hotel.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 2:</strong> Visita alle Piramidi di Giza, la Grande Sfinge e il Nuovo Museo Egizio (GEM).</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 3:</strong> Partenza per l'Oasi di Bahariya, esplorazione in 4x4 del Deserto Nero, la Montagna di Cristallo e il suggestivo Deserto Bianco.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                            <span><strong>Giorno 4:</strong> Rientro al Cairo e trasferimento verso Luxor per iniziare l'esperienza sul Nilo.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-        
+  const translations = {
+    it:{home:"Home",destinations:"Destinazioni",about:"Chi siamo",payment:"Pagamenti",contact:"Contatti",eyebrow:"Viaggi selezionati · Esperienze autentiche",heroTitle:"Il mondo è più bello da scoprire.",heroText:"Dalle meraviglie dell’antico Egitto alle atmosfere del Marocco, dalla magia della Turchia alle acque cristalline delle Maldive: il tuo prossimo viaggio comincia qui.",explore:"Scopri le destinazioni",choose:"Scegli la tua prossima esperienza",destTitle:"Destinazioni da ricordare",destText:"Ogni luogo ha una storia. Noi ti aiutiamo a viverla.",egyptDesc:"Piramidi, Nilo, deserti e Mar Rosso.",moroccoDesc:"Medine, colori, kasbah e deserto.",turkeyDesc:"Istanbul, Cappadocia e paesaggi unici.",maldivesDesc:"Lagune turchesi e relax sull’oceano.",request:"Richiedi informazioni",ourWay:"Il nostro modo di viaggiare",aboutTitle:"Non solo una meta. Un’esperienza da vivere.",aboutText:"Orizzonti Travel ti accompagna nella scoperta di destinazioni straordinarie con proposte curate e assistenza nella fase di richiesta e organizzazione del viaggio. Raccontaci cosa sogni: ti aiuteremo a trovare il programma più adatto.",care:"Attenzione",careText:"Ascoltiamo le tue esigenze.",ideas:"Ispirazione",ideasText:"Idee per viaggi indimenticabili.",support:"Supporto",supportText:"Un contatto diretto per le tue richieste.",clearInfo:"Informazioni chiare",payTitle:"Modalità di pagamento",payIntro:"Le condizioni vengono confermate insieme al programma scelto prima di procedere.",egyptPayTitle:"Viaggi in Egitto",egyptPayText:"Per i programmi in Egitto, la modalità concordata prevede il 50% al momento della prenotazione e il restante 50% in euro all’arrivo in Egitto.",deposit:"Alla prenotazione",arrival:"All’arrivo in Egitto, in euro",otherPay:"Per Marocco, Turchia e Maldive, modalità e scadenze di pagamento saranno comunicate nel preventivo prima della conferma. Nessun pagamento viene richiesto tramite questo sito.",talk:"Parliamo del tuo prossimo viaggio",contactTitle:"Raccontaci cosa stai cercando.",contactText:"Compila il modulo: si aprirà WhatsApp con il tuo messaggio già pronto da inviare. Ti risponderemo per approfondire la tua richiesta.",reply:"Richieste e informazioni viaggi",name:"Nome",email:"Email",destination:"Destinazione",selectDest:"Seleziona una destinazione",other:"Altra destinazione",people:"Numero di viaggiatori",message:"Messaggio",send:"Invia richiesta su WhatsApp",privacy:"Inviando la richiesta, si aprirà WhatsApp. Non inserire dati di pagamento o documenti personali nel modulo.",rights:"Tutti i diritti riservati."},
+    en:{home:"Home",destinations:"Destinations",about:"About us",payment:"Payments",contact:"Contact",eyebrow:"Curated journeys · Authentic experiences",heroTitle:"The world is better when discovered.",heroText:"From the wonders of ancient Egypt to the colours of Morocco, from the magic of Türkiye to the crystal waters of the Maldives: your next journey starts here.",explore:"Explore destinations",choose:"Choose your next experience",destTitle:"Destinations to remember",destText:"Every place has a story. Let us help you experience it.",egyptDesc:"Pyramids, the Nile, deserts and the Red Sea.",moroccoDesc:"Medinas, colours, kasbahs and desert.",turkeyDesc:"Istanbul, Cappadocia and unique landscapes.",maldivesDesc:"Turquoise lagoons and ocean escapes.",request:"Request information",ourWay:"The way we travel",aboutTitle:"More than a destination. An experience.",aboutText:"Orizzonti Travel helps you discover remarkable destinations through carefully selected ideas and support with your travel enquiry and planning. Tell us what you have in mind and we will help you find a suitable itinerary.",care:"Attention",careText:"We listen to your needs.",ideas:"Inspiration",ideasText:"Ideas for memorable journeys.",support:"Support",supportText:"A direct contact for your enquiries.",clearInfo:"Clear information",payTitle:"Payment information",payIntro:"Payment conditions are confirmed with your chosen itinerary before proceeding.",egyptPayTitle:"Trips to Egypt",egyptPayText:"For Egypt itineraries, the agreed arrangement is 50% at booking and the remaining 50% in euros upon arrival in Egypt.",deposit:"When booking",arrival:"On arrival in Egypt, in euros",otherPay:"For Morocco, Türkiye and the Maldives, payment terms and deadlines will be stated in the quotation before confirmation. No payment is collected through this website.",talk:"Let's talk about your next trip",contactTitle:"Tell us what you are looking for.",contactText:"Complete the form and WhatsApp will open with your message ready to send. We will get back to you to discuss your enquiry.",reply:"Travel enquiries and information",name:"Name",email:"Email",destination:"Destination",selectDest:"Choose a destination",other:"Other destination",people:"Number of travellers",message:"Message",send:"Send enquiry on WhatsApp",privacy:"WhatsApp will open when you submit. Do not enter payment details or personal documents in this form.",rights:"All rights reserved."},
+    ar:{home:"الرئيسية",destinations:"الوجهات",about:"من نحن",payment:"الدفع",contact:"اتصل بنا",eyebrow:"رحلات مختارة · تجارب حقيقية",heroTitle:"العالم أجمل عندما نكتشفه.",heroText:"من عجائب مصر القديمة إلى أجواء المغرب، ومن سحر تركيا إلى مياه المالديف الصافية: رحلتك القادمة تبدأ من هنا.",explore:"اكتشف الوجهات",choose:"اختر تجربتك القادمة",destTitle:"وجهات لا تُنسى",destText:"لكل مكان حكاية، ونحن نساعدك على عيشها.",egyptDesc:"الأهرامات والنيل والصحراء والبحر الأحمر.",moroccoDesc:"المدن القديمة والألوان والقصبات والصحراء.",turkeyDesc:"إسطنبول وكابادوكيا ومناظر فريدة.",maldivesDesc:"بحيرات فيروزية واسترخاء وسط المحيط.",request:"اطلب المعلومات",ourWay:"طريقتنا في السفر",aboutTitle:"ليست مجرد وجهة، بل تجربة تعيشها.",aboutText:"تساعدك أورزنتي ترافل على اكتشاف وجهات مميزة من خلال برامج مختارة ومساعدة في طلب وتنظيم الرحلة. أخبرنا بما تحلم به وسنساعدك في العثور على البرنامج المناسب.",care:"اهتمام",careText:"نستمع إلى احتياجاتك.",ideas:"إلهام",ideasText:"أفكار لرحلات لا تُنسى.",support:"مساعدة",supportText:"تواصل مباشر للرد على طلباتك.",clearInfo:"معلومات واضحة",payTitle:"طرق 
